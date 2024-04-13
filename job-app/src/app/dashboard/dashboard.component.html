@@ -1,0 +1,48 @@
+<app-header *ngIf="!showLoader && authService.isloggedin"></app-header>
+
+<div id="loader" *ngIf="showLoader"></div>
+
+
+<div class="container" *ngIf="!showLoader && authService.isloggedin">
+    <h1>Job Tracker Dashboard</h1>
+    <div class="section">
+      <div class="section-header">Job Applications</div>
+      <div class="job-card">
+        <h3>Software Engineer at ABC Inc.</h3>
+        <p>Status: Applied</p>
+        <p>Date Applied: January 15, 2024</p>
+      </div>
+      <div class="job-card">
+        <h3>Data Analyst at XYZ Corp.</h3>
+        <p>Status: Interview Scheduled</p>
+        <p>Date Applied: February 5, 2024</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header">Interviews</div>
+      <div class="job-card">
+        <h3>Data Analyst at XYZ Corp.</h3>
+        <p>Status: Pending</p>
+        <p>Date: March 1, 2024</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header">Tasks</div>
+      <div class="job-card">
+        <h3>Update Resume</h3>
+        <p>Status: In Progress</p>
+        <p>Due Date: April 20, 2024</p>
+      </div>
+      <div class="job-card">
+        <h3>Prepare for Interview</h3>
+        <p>Status: Not Started</p>
+        <p>Due Date: April 25, 2024</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div>
+    <input type="text" [(ngModel)]="email" placeholder="Enter email address">
+    <input type="text" [(ngModel)]="keyword" placeholder="Enter search keyword">  Add input field for the search keyword -->
+    <!-- <button (click)="searchEmails()">Search</button> -->
+  <!-- </div> --> 

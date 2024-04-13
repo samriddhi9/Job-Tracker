@@ -1,0 +1,11 @@
+1. I am not sending node modules and libraries as they are of very large size.Please run the program using app like VS code and run npm install command before running the program as it will show the error.
+
+2. For API data. i have created a fake REST API locally and herewith attached a seperate file. for CRUD Operation.
+   Please run 
+        a) npm install
+   **** b) npm run json:server *****
+   in the terminal otherwise the data wont show up in the page.Thats the name of my created json server. 
+   The data will come seperatly in localhost:3000. And our project shall run in another port locally.
+
+
+   

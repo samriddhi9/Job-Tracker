@@ -1,0 +1,175 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Standard</th>
+        <th>Parent's Name</th>
+        <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentsData; let i = index;">
+        <td>
+          <button (click)="edit(i)" class="submitBlueBtn">Edit</button>
+        </td>
+        <td>{{student.name}}</td>
+        <td>{{student.dateOfApplication}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.standard}}</td>
+        <td>{{student.parentName}}</td>
+        <td>{{student.contact}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Student's Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate  *ngIf="model && model.length > 0">
+
+
+          <div class="form-group col-5">
+            <label>Name</label>
+            <input type="text" name="firstName" class="form-control" [(ngModel)]="model[formindex].name" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }"
+              required>
+            <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+              <div *ngIf="firstName.errors.required">First Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group col-5">
+            <label>Date of Birth</label>
+            <input type="text" name="dateOfApplication" class="form-control" placeholder="DD//MM/YYYY" [(ngModel)]="model[formindex].dateOfApplication" #dateOfApplication="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dateOfApplication.invalid }"
+              required>
+            <div *ngIf="f.submitted && dateOfApplication.invalid" class="invalid-feedback">
+              <div *ngIf="dateOfApplication.errors.required">Last Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" class="form-control" [(ngModel)]="model[formindex].email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+              required email>
+            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+              <div *ngIf="email.errors.required">Email is required</div>
+              <div *ngIf="email.errors.email">Email must be a valid email address</div>
+            </div>
+          </div>
+
+          <div class="form-group col-5">
+            <label>Standard</label>
+            <input type="text" name="standard" class="form-control" [(ngModel)]="model[formindex].standard" #standard="ngModel" [ngClass]="{ 'is-invalid': f.submitted && standard.invalid }"
+              required>
+            <div *ngIf="f.submitted && standard.invalid" class="invalid-feedback">
+              <div *ngIf="standard.errors.required">First Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group col-5">
+            <label>Guardian</label>
+            <input type="text" name="parentName" class="form-control" [(ngModel)]="model[formindex].parentName" #parentName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && parentName.invalid }"
+              required>
+            <div *ngIf="f.submitted && parentName.invalid" class="invalid-feedback">
+              <div *ngIf="parentName.errors.required">First Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group col-5">
+            <label>Contact</label>
+            <input type="text" name="contact" class="form-control" [(ngModel)]="model[formindex].contact" #contact="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contact.invalid }"
+              required>
+            <div *ngIf="f.submitted && contact.invalid" class="invalid-feedback">
+              <div *ngIf="contact.errors.required">First Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group col-5">
+            <input type="submit" value="submit" (click)="onSave(model[formindex])">
+         
+          </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+TS
+
+//   getStudents(): void {
+//     this.studentservices.getStudent().subscribe( response => 
+//     { 
+//       // response => response.text()
+//       this.studentsData = response; 
+//       console.log(this.studentsData)
+    
+//       this.model = <Array<Student>>this.studentsData;     
+//       }
+//       );
+//   }
+
+//  edit(index){
+//    $('#studentModal').modal('show');
+//    this.formindex= index;
+//   }
+
+//   onSave(student:Student){
+//      console.log(student);
+//      debugger
+//      this.studentservices.updateStudent(student).subscribe(response => 
+//     {  debugger
+//       console.log(response)})
+//   }
+
+  // onSubmit(){
+  //   let student = this.model;
+  //   console.log(this.model)
+  //   this.studentservices.updateStudent(student).subscribe( response => 
+  //     { 
+  //       this.studentsData = response; 
+  //       }
+  //       );
+  // }
+ 
+
+
+
+
+
+Service
+
+ 
+  /** GET Student data from the server */
+//   getStudent(): Observable<Student[]> {
+//     return this.http.get<Student[]>(this.studentUrl)
+//   }
+
+
+//   /** PUT: update the student on the server. Returns the updated student upon success. */
+//   updateStudent (student: Student): Observable<Student[]> {
+
+//     return this.http.put<Student[]>(this.studentUrl ,student)
+   
+// }  

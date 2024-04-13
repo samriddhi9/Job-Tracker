@@ -1,0 +1,132 @@
+{
+  "vrmasterdata": [
+    {
+      "customerinfo": [
+        {
+          "agreementStartdate": "2020-10-12T07:57:46.349Z",
+          "agreementEnddate": "2020-10-12T07:57:46.349Z",
+          "businessAndProfitCenter": {
+            "id": "14",
+            "value": "(400504) SBM - Cementitious Grouts & Mortars",
+            "code": "400504"
+          },
+          "businessdata": {
+            "id": "14",
+            "value": "(400504) SBM - Cementitious Grouts & Mortars",
+            "code": "400504"
+          },
+          "businesscode": "400504",
+          "uniqueCustomerId": "1120542",
+          "customerName": "sam",
+          "legalEntityName": "test",
+          "gcpLeadContact": {
+            "id": "474",
+            "value": "Lab6000, Chicago51",
+            "code": null
+          },
+          "gcpleadContactdata": {
+            "id": "474",
+            "value": "Lab6000, Chicago51",
+            "code": null
+          },
+          "rebateFrequencyValue": "Quarterly",
+          "rebateDueByValue": "30",
+          "paymentTypeValue": "AR",
+          "autoRenewalClauseValue": "No",
+          "outstandingARValue": "No",
+          "serviceFeesValue": "No"
+        }
+      ],
+      "inputParameter": [
+        {
+          "paymentPeriod": "Quarterly",
+          "agreementDaysDue": "30",
+          "paymentTerms": ""
+        }
+      ],
+      "payerDetails": [
+        {
+          "companyCode": "181",
+          "index": 0,
+          "payerName": "ALLSTATE CAN CORPORATION",
+          "vendorName": "",
+          "customerpayernumber": "100320",
+          "paymentTerm": ""
+        }
+      ],
+      "id": 0
+    },
+    {
+      "customerinfo": [
+        {
+          "agreementStartdate": "2020-10-12T08:16:30.013Z",
+          "agreementEnddate": "2020-10-12T08:16:30.013Z",
+          "businessAndProfitCenter": {
+            "id": "25",
+            "value": "(400707) SBM - Halex Flooring",
+            "code": "400707"
+          },
+          "businessdata": {
+            "id": "25",
+            "value": "(400707) SBM - Halex Flooring",
+            "code": "400707"
+          },
+          "businesscode": "400707",
+          "uniqueCustomerId": "1286481",
+          "customerName": "fred",
+          "legalEntityName": "16563",
+          "gcpSalesCoordinator": {
+            "id": "4035",
+            "value": "Bhosle, Samriddhi",
+            "code": null
+          },
+          "gcpSalesCodata": {
+            "id": "4035",
+            "value": "Bhosle, Samriddhi",
+            "code": null
+          },
+          "rebateFrequencyValue": "Quarterly",
+          "rebateDueByValue": "30",
+          "paymentTypeValue": "AR",
+          "autoRenewalClauseValue": "No",
+          "outstandingARValue": "No",
+          "serviceFeesValue": "No"
+        }
+      ],
+      "inputParameter": [
+        {
+          "paymentPeriod": "Quarterly",
+          "agreementDaysDue": "30",
+          "paymentTerms": ""
+        }
+      ],
+      "payerDetails": [
+        {
+          "companyCode": "328",
+          "index": 0,
+          "payerName": "CROWN CORK & SEAL COMPANY, INC.",
+          "vendorName": "",
+          "customerpayernumber": "112351",
+          "paymentTerm": ""
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "name": "Samriddhi Zakri",
+      "dateOfApplication": "09-10-1992",
+      "status": "Applied",
+      "companyName": "Bitcoin"
+    },
+    {
+      "name": "Modassir Zakri",
+      "dateOfApplication": "24-10-1992",
+      "status": "Applied",
+      "id": 2,
+      "companyName": "Ripple"
+    }
+  ]
+}
