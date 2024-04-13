@@ -2,9 +2,9 @@ export class JobTracker {
     id: number;
     name: string ; //job title
     dateOfApplication: Date;
-    email?: string;
+    url: string;
     status : string;
     parentName?: string;
-    contact?: string;
+    country: string;
     companyName?: boolean;
   }

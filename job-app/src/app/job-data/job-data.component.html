@@ -1,4 +1,4 @@
-<app-header  *ngIf="!showLoader && authService.isloggedin"></app-header>
+
 <div id="loader" *ngIf="showLoader"></div>
 <div class="container"  *ngIf="!showLoader && authService.isloggedin">
     <div class="progress" *ngIf ="pageLoader">
@@ -8,14 +8,16 @@
     </div>
     <h3>Applied list of Jobs</h3>
     <div class="table-responsive">
-        <table class="table">
+        <table class="table" id="excel-table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
                     <th>Date of Application</th>
                     <th>Organization Name</th>
-                    <th>status</th>
+                    <th>Status</th>
+                    <th>Country</th>
+                    <th>URL</th>
                     <!-- <th>Parent's Name</th> -->
                     <!-- <th>Check Current Status</th> -->
                 </tr>
@@ -23,10 +25,13 @@
             <tbody>
                 <tr *ngFor="let item of jobsData">
                     <td>{{item.id}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.dateOfApplication}}</td>
-                    <td>{{item.companyName}}</td>
-                    <td>{{item.status}}</td>
+                    <td>{{item.name? item.name : '-'}}</td>
+                    <td>{{item.dateOfApplication ? item.dateOfApplication : '-'}}</td>
+                    <td>{{item.companyName ? item.companyName : '-'}}</td>
+                    <td>{{item.status ? item.status : '-'}}</td>
+                    <td>{{item.country ? item.country : '-'}}</td>
+                    <td *ngIf="item.url"><a href="{{item.url}}" target="_blank">Redirect to Company's Website</a></td>
+                    <td *ngIf="!item.url">-</td>
                     <!-- <td>{{item.parentName}}</td>
                     <td>{{item.contact}}</td> -->
                     <td style="display: flex">
@@ -45,6 +50,7 @@
         </table>
      </div>
     <button type="button" class="btn btn-success" [routerLink]="[ '/create']">Add New</button>
+    <button type="button" class="btn btn-primary" (click)="downloadFile()" style="margin-left: 10px;;">Download Excel</button>
 </div>
 
 <!-- <div class="popup-overlay">

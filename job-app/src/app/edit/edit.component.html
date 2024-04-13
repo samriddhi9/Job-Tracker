@@ -1,4 +1,4 @@
-<app-header *ngIf="!showLoader && authService.isloggedin"></app-header>
+
 <div id="loader" *ngIf="showLoader"></div>
 <div class="container" *ngIf="!showLoader && authService.isloggedin">
 
@@ -19,26 +19,23 @@
 
     <div class="form-group" [ngClass]="{'has-danger': dob.invalid && (dob.dirty || dob.touched),
 'has-success': dob.valid && (dob.dirty || dob.touched) }">
-      <label for="dob">Date Of Birth</label>
+      <label for="dob">Date Of Application</label>
       <input type="text" class="form-control" id="dob" name="dob" [(ngModel)]="data.dateOfApplication" ngModel #dob="ngModel"
-        placeholder="Enter Date Of Birth in DD/MM/YYYY format"
+        placeholder="Enter Date Of Application in DD/MM/YYYY format"
         pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" required>
     </div>
     <div class="alert alert-danger" *ngIf="dob.errors && (dob.dirty || dob.touched)">
-      <p *ngIf="dob.errors?.required">Date Of Birth is required</p>
+      <p *ngIf="dob.errors?.required">Date Of Application is required</p>
       <p *ngIf="dob.errors?.pattern">Date provided is invalid</p>
     </div>
 
-    <!-- <div class="form-group" [ngClass]="{'has-danger': email.invalid && (email.dirty || email.touched),
-'has-success': email.valid && (email.dirty || email.touched) }">
-      <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" name="email" pattern="[^ @]*@[^ @]*" [(ngModel)]="data.email"
-        ngModel #email="ngModel" placeholder="Enter Email" required>
-    </div>
-    <div class=" alert alert-danger" *ngIf="email.errors && (email.dirty || email.touched)">
-      <p *ngIf="email.errors?.required">Email is required </p>
-      <p *ngIf="email.errors?.pattern">Email must contain at least the @ character</p>
-    </div> -->
+   
+    <div class="form-group">
+      <label for="url">Job Url</label>
+      <input type="text" class="form-control" id="url" name="url" [(ngModel)]="data.url"
+      ngModel #url="ngModel" placeholder="Enter Url" >
+  </div>
+ 
 
     <div class="form-group" [ngClass]="{'has-danger': std.invalid && (std.dirty || std.touched),
 'has-success': std.valid && (std.dirty || std.touched) }">
@@ -60,17 +57,15 @@
       <p *ngIf="companyName.errors?.required">Organization's Name is required</p>
     </div>
 
-    <!-- <div class="form-group" [ngClass]="{'has-danger': contact.invalid && (contact.dirty || contact.touched),
-'has-success': contact.valid && (contact.dirty || contact.touched) }">
-      <label for="contact">Contact</label>
-      <input type="text" class="form-control" id="contact" name="contact" [(ngModel)]="data.contact" ngModel
-        #contact="ngModel" placeholder="Enter Contact" maxlength="10" pattern="^[0-9]*$" required>
+    <div class="form-group" [ngClass]="{'has-danger': country.invalid && (country.dirty || country.touched),
+'has-success': country.valid && (country.dirty || country.touched) }">
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" name="country" [(ngModel)]="data.country" ngModel
+        #country="ngModel" placeholder="Enter Country" required>
     </div>
-    <div class="alert alert-danger" *ngIf="contact.errors && (contact.dirty || contact.touched)">
-      <p *ngIf="contact.errors?.required">Contact Number is required</p>
-      <p *ngIf="contact.errors?.maxlength">Contact Number must contain 10 digits</p>
-      <p *ngIf="contact.errors?.pattern">Contact Number must contain only numbers</p>
-    </div> -->
+    <div class="alert alert-danger" *ngIf="country.errors && (country.dirty || country.touched)">
+      <p *ngIf="country.errors?.required">Country is required</p>
+    </div>
 
     <button type="submit" class="btn btn-success" [disabled]="f.invalid">Update</button>
   </form>

@@ -1,8 +1,4 @@
-<app-header *ngIf="!showLoader && authService.isloggedin"></app-header>
-
 <div id="loader" *ngIf="showLoader"></div>
-
-
 <div class="container" *ngIf="!showLoader && authService.isloggedin">
     <h1>Job Tracker Dashboard</h1>
     <div class="section">

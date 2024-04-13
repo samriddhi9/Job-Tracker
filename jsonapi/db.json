@@ -116,17 +116,21 @@
   "jobs": [
     {
       "id": 1,
-      "name": "Samriddhi Zakri",
-      "dateOfApplication": "09-10-1992",
+      "name": "Senior Web Engineer",
+      "dateOfApplication": "09-10-2023",
       "status": "Applied",
-      "companyName": "Bitcoin"
+      "companyName": "Bitcoin",
+      "url": "https://dev.to/pankajkumar/how-to-export-data-to-excel-file-in-angular-application-2n1c",
+      "country": "UK"
     },
     {
-      "name": "Modassir Zakri",
+      "name": "Java Developer",
       "dateOfApplication": "24-10-1992",
       "status": "Applied",
       "id": 2,
-      "companyName": "Ripple"
+      "companyName": "Ripple",
+      "url": "https://dev.to/pankajkumar/how-to-export-data-to-excel-file-in-angular-application-2n1c",
+      "country": "UK"
     }
   ]
 }
