@@ -1,5 +1,5 @@
 
-<app-header  *ngIf="authService.isloggedin"></app-header>
+<app-header  *ngIf="!router.url.includes('login')"></app-header>
 
 <div id="myDiv">
   <router-outlet></router-outlet>

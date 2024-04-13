@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './authentication/authService';
+import { Router } from '@angular/router';
 declare const $: any;
 
 @Component({
@@ -9,7 +10,7 @@ declare const $: any;
 })
 export class AppComponent {
   title = 'app';
-  constructor(private authService : AuthService  ) {
+  constructor(private authService : AuthService ,private router: Router ) {
     // $(document).ready(function(){
     //   var myVar = setTimeout(showPage, 3000);
      

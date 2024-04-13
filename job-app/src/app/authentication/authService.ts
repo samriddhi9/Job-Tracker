@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   private readonly clientId = '278258666547-cgbk05tq1et9hpipp1j2fm97o9004u4r.apps.googleusercontent.com';
-  private readonly redirectUri = 'http://localhost:4200/auth/callback';
+  private readonly redirectUri = 'http://localhost:5000/auth/callback';
   private readonly scope = 'email openid profile'; // Add additional scopes as needed
   private readonly tokenEndpoint = 'https://oauth2.googleapis.com/token';
   public isloggedin :boolean = true
